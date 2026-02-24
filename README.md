@@ -1,19 +1,35 @@
-# 🎈 Blank app template
+# 🏀 NBA Stats Analyzer
 
-A simple Streamlit app template for you to modify!
+A Streamlit website that uses the official NBA stats API endpoints (via [`nba_api`](https://github.com/swar/nba_api)) to pull live NBA.com data and run interactive analysis.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Features
 
-### How to run it on your own machine
+- Pulls player and team stats for any NBA season.
+- Supports Regular Season and Playoffs data.
+- Allows multiple per-mode views (Per Game, Totals, Per 36, etc.).
+- Visualizes:
+  - Top players by a selected metric.
+  - Usage vs scoring bubble chart.
+  - Team offense/defense/net rating table.
+- Includes raw data tables for deeper inspection.
 
-1. Install the requirements
+## Run locally
 
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
    ```
-   $ pip install -r requirements.txt
+
+2. Start the app:
+
+   ```bash
+   streamlit run streamlit_app.py
    ```
 
-2. Run the app
+3. Open the local URL shown by Streamlit (usually `http://localhost:8501`).
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Notes
+
+- Data is fetched from NBA.com stats endpoints through `nba_api`.
+- Requests are cached for one hour in Streamlit to speed up reloads.
